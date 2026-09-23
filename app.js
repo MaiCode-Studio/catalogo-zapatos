@@ -1,6 +1,5 @@
 const STORAGE_KEY = 'simulacionCalzados';
 const NEW_SELECTION_KEY = 'simulacionNuevaSeleccion';
-const SEARCH_INPUT_KEY = 'catalogoBusqueda';
 
 const catalogoOrdenado = [...window.catalogo].sort((a, b) => {
   if (a.nuevo !== b.nuevo) {
@@ -40,9 +39,8 @@ const normalizeSearchText = (value) =>
 const contenedor = document.getElementById('catalogo');
 const total = document.getElementById('totalProductos');
 const searchInput = document.getElementById('searchInput');
-const searchValorGuardado = localStorage.getItem(SEARCH_INPUT_KEY) || '';
 if (searchInput) {
-  searchInput.value = searchValorGuardado;
+  searchInput.value = '';
 }
 const simulacionLista = document.getElementById('simulacionLista');
 const simulacionVacia = document.getElementById('simulacionVacia');
@@ -207,6 +205,12 @@ function renderCatalogo(items = catalogoOrdenado) {
 
       const seleccionado = seleccion.has(item.id);
       const badgeNuevo = item.nuevo ? `<span class="new-badge">Nuevo</span>` : '';
+      const badgeDisponibilidad = item.disponible
+        ? '<span class="availability-badge available">Disponible</span>'
+        : '<span class="availability-badge unavailable">No disponible</span>';
+      const tallas = item.tallas.length
+        ? item.tallas.map((talla) => `<span class="talla-chip">${talla}</span>`).join('')
+        : '<span class="variant-empty">Sin tallas disponibles</span>';
 
       return `
         <article class="select-card ${item.id === modeloSeleccionadoId ? 'active' : ''}">
@@ -214,7 +218,7 @@ function renderCatalogo(items = catalogoOrdenado) {
           <div class="content">
             <div class="card-header-row">
               <h2 class="name">${item.nombre}</h2>
-              ${badgeNuevo}
+              <div class="card-badges">${badgeNuevo}${badgeDisponibilidad}</div>
             </div>
 
             <div class="meta">
@@ -226,11 +230,16 @@ function renderCatalogo(items = catalogoOrdenado) {
 
             <div class="info-block">
               <p class="info-label">Colores disponibles</p>
-              <div class="color-list">${colores}</div>
+              <div class="color-list">${colores || '<span class="variant-empty">Sin colores disponibles</span>'}</div>
+            </div>
+
+            <div class="info-block">
+              <p class="info-label">Tallas disponibles</p>
+              <div class="talla-list">${tallas}</div>
             </div>
 
             <div class="card-actions">
-              <button class="select-button ${seleccionado ? 'selected' : ''}" type="button" data-id="${item.id}">
+              <button class="select-button ${seleccionado ? 'selected' : ''}" type="button" data-id="${item.id}" ${!item.disponible || !item.colores.length || !item.tallas.length ? 'disabled' : ''}>
                 ${seleccionado ? 'Seleccionado' : 'Seleccionar'}
               </button>
             </div>
@@ -243,7 +252,7 @@ function renderCatalogo(items = catalogoOrdenado) {
   contenedor.querySelectorAll('.select-button').forEach((button) => {
     button.addEventListener('click', () => {
       const producto = catalogoOrdenado.find((item) => item.id === button.dataset.id);
-      if (!producto) return;
+      if (!producto || !producto.disponible || !producto.colores.length || !producto.tallas.length) return;
 
       if (seleccion.has(producto.id)) {
         seleccion.delete(producto.id);

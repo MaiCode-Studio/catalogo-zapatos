@@ -584,4 +584,38 @@ const catalogo = [
   }
 ];
 
-window.catalogo = catalogo;
+const AJUSTES_PRODUCTOS_KEY = 'maiShoesAjustesProductos';
+
+function obtenerAjustesProductos() {
+  try {
+    const ajustes = JSON.parse(localStorage.getItem(AJUSTES_PRODUCTOS_KEY) || '{}');
+    return ajustes && typeof ajustes === 'object' ? ajustes : {};
+  } catch (error) {
+    return {};
+  }
+}
+
+const ajustesProductos = obtenerAjustesProductos();
+const configuracionPublicada = window.productosConfig && typeof window.productosConfig === 'object'
+  ? window.productosConfig
+  : {};
+
+window.catalogoBase = catalogo;
+window.catalogo = catalogo.map((producto) => {
+  const ajustes = ajustesProductos[producto.id] || configuracionPublicada[producto.id];
+  if (!ajustes) return { ...producto, disponible: true };
+
+  const precio = Number(ajustes.precio);
+  const precioDescuento = Number(ajustes.precioDescuento);
+  const coloresDisponibles = Array.isArray(ajustes.colores) ? ajustes.colores : producto.colores.map((color) => color.nombre);
+  const tallasDisponibles = Array.isArray(ajustes.tallas) ? ajustes.tallas : producto.tallas;
+
+  return {
+    ...producto,
+    disponible: ajustes.disponible !== false,
+    precio: Number.isFinite(precio) && precio >= 0 ? precio : producto.precio,
+    precioDescuento: Number.isFinite(precioDescuento) && precioDescuento >= 0 ? precioDescuento : producto.precioDescuento,
+    colores: producto.colores.filter((color) => coloresDisponibles.includes(color.nombre)),
+    tallas: producto.tallas.filter((talla) => tallasDisponibles.includes(talla))
+  };
+});

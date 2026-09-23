@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MaiShoes | Administración</title>
+    <link rel="stylesheet" href="sytle.css" />
+  </head>
+  <body>
+    <main class="admin-page">
+      <section id="adminLogin" class="admin-login" aria-labelledby="adminLoginTitle">
+        <h1 id="adminLoginTitle">Administración</h1>
+        <p>Ingresa con la cuenta de gerente.</p>
+        <form id="loginForm" class="admin-login-form">
+          <label>Usuario<input id="adminUser" autocomplete="username" required /></label>
+          <label>Contraseña<input id="adminPassword" type="password" autocomplete="current-password" required /></label>
+          <p id="loginError" class="admin-error" aria-live="polite"></p>
+          <button class="admin-save" type="submit">Ingresar</button>
+        </form>
+      </section>
+
+      <section id="adminPanel" hidden>
+        <header class="admin-header">
+          <div>
+            <h1>Administrar productos</h1>
+            <p>Disponibilidad, precios, colores y tallas.</p>
+          </div>
+          <div class="admin-header-actions">
+            <a class="button primary" href="catalogo.html">Ver catálogo</a>
+            <button id="logoutButton" class="admin-reset" type="button">Salir</button>
+          </div>
+        </header>
+        <p id="adminMessage" class="admin-message" aria-live="polite"></p>
+        <section id="adminProductos" class="admin-products" aria-label="Productos"></section>
+      </section>
+    </main>
+    <script src="productos-config.js"></script>
+    <script src="catalogo.js"></script>
+    <script src="admin.js"></script>
+  </body>
+</html>

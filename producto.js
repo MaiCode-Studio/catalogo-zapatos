@@ -11,6 +11,7 @@ const colorInfo = document.getElementById('colorInfo');
 const tallas = document.getElementById('tallas');
 const tallaInfo = document.getElementById('tallaInfo');
 const volverProducto = document.getElementById('volverProducto');
+const estadoDisponibilidad = document.getElementById('estadoDisponibilidad');
 
 if (!product) {
   document.body.innerHTML = `
@@ -41,8 +42,9 @@ if (!product) {
   const varianteGuardada = Array.isArray(guardados)
     ? guardados.find((item) => typeof item === 'object' && item?.id === product.id)
     : null;
-  let colorActual = product.colores.find((color) => color.nombre === varianteGuardada?.color) || product.colores[0];
+  let colorActual = product.colores.find((color) => color.nombre === varianteGuardada?.color) || product.colores[0] || null;
   let tallaActual = product.tallas.includes(varianteGuardada?.talla) ? varianteGuardada.talla : null;
+  const puedeComprar = product.disponible && product.colores.length > 0 && product.tallas.length > 0;
 
   if (new URLSearchParams(window.location.search).get('return') === 'simulacion' && volverProducto) {
     volverProducto.href = 'catalogo.html#simulacion';
@@ -50,13 +52,13 @@ if (!product) {
   }
 
   function actualizarInfoSeleccion() {
-    colorInfo.textContent = `Color seleccionado: ${colorActual.nombre}`;
-    tallaInfo.textContent = tallaActual ? `Talla seleccionada: ${tallaActual}` : 'Selecciona una talla';
+    colorInfo.textContent = colorActual ? `Color seleccionado: ${colorActual.nombre}` : 'Sin colores disponibles';
+    tallaInfo.textContent = tallaActual ? `Talla seleccionada: ${tallaActual}` : product.tallas.length ? 'Selecciona una talla' : 'Sin tallas disponibles';
   }
 
   function actualizarImagenPrincipal(src) {
-    mainImage.src = src;
-    mainImage.alt = `${product.nombre} - ${colorActual.nombre}`;
+    mainImage.src = src || product.imagenes[0];
+    mainImage.alt = colorActual ? `${product.nombre} - ${colorActual.nombre}` : product.nombre;
   }
 
   function renderGaleria() {
@@ -141,7 +143,11 @@ if (!product) {
   descripcion.textContent = product.descripcion;
   detalle.textContent = product.detalle;
 
-  actualizarImagenPrincipal(colorActual.imagen);
+  if (estadoDisponibilidad) {
+    estadoDisponibilidad.textContent = product.disponible ? 'Disponible' : 'No disponible';
+    estadoDisponibilidad.classList.toggle('unavailable', !product.disponible);
+  }
+  actualizarImagenPrincipal(colorActual?.imagen);
   renderGaleria();
   renderColores();
   renderTallas();
@@ -165,8 +171,13 @@ if (!product) {
   }
 
   actualizarEstadoBoton();
+  if (!puedeComprar) {
+    botonCompra.disabled = true;
+    botonCompra.textContent = product.disponible ? 'Variantes no disponibles' : 'Producto no disponible';
+  }
 
   botonCompra.addEventListener('click', () => {
+    if (!puedeComprar) return;
     if (!tallaActual) {
       tallaInfo.textContent = 'Selecciona una talla antes de agregar a la simulación';
       return;

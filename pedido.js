@@ -165,11 +165,15 @@ datosPedidoForm.addEventListener('submit', (event) => {
   const formatoSeleccionado = mostrarBcv ? formatCurrency : formatUsdt;
   const monedaSeleccionada = mostrarBcv ? 'BCV' : 'USDT';
   const detalles = pedido
-    .map(({ seleccion, producto }) => [
-      `Calzado: ${producto.nombre}`,
-      `Talla: ${seleccion.talla}`,
-      `Color: ${seleccion.color}`
-    ].join('\n'))
+    .map(({ seleccion, producto }) => {
+      const colorActual = producto.colores.find((color) => color.nombre === seleccion.color) || producto.colores[0];
+      return [
+        `Calzado: ${producto.nombre}`,
+        `Talla: ${seleccion.talla}`,
+        `Color: ${seleccion.color}`,
+        `Imagen: ${colorActual.imagen}`
+      ].join('\n');
+    })
     .join('\n\n');
 
   const mensaje = [
