@@ -580,7 +580,14 @@ textarea {
 
   .home-carousel-heading h2,
   .faq-heading h2 {
-    text-align: right;
+    text-align: left;
+  }
+
+  .faq-heading h2 {
+    max-width: 100%;
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+    line-height: 1.08;
+    overflow-wrap: anywhere;
   }
 
   .faq-heading > p:last-child {
@@ -588,11 +595,26 @@ textarea {
   }
 
   .faq-section {
+    width: 100%;
+    min-width: 0;
     padding: 22px 16px;
   }
 
   .faq-list details {
     padding: 0 14px;
+  }
+
+  .faq-list summary {
+    min-width: 0;
+    gap: 12px;
+    font-size: 1.2rem;
+    line-height: 1.25;
+    text-align: left;
+  }
+
+  .faq-list p {
+    margin-right: 0;
+    overflow-wrap: anywhere;
   }
 
   .home-carousel {
