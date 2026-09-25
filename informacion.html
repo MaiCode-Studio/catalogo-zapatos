@@ -14,7 +14,10 @@
 		<main class="info-page">
 			<header class="info-header">
 				<a class="brand-inline" href="index.html">Mai Shoes</a>
-				<nav class="top-nav" aria-label="Navegación del sitio">
+				<button class="site-nav-toggle" type="button" aria-expanded="false" aria-controls="siteNavLinks">
+					<span>Menú</span><span class="site-nav-toggle-icon" aria-hidden="true"></span>
+				</button>
+				<nav class="top-nav" id="siteNavLinks" aria-label="Navegación del sitio">
                     <a href="index.html" >Inicio</a>
                     <a href="guia-tallas.html">Guía de tallas</a>
                     <a class="active" href="informacion.html">Nosotros</a>
@@ -36,7 +39,6 @@
 				</div>
 				<figure class="about-hero-image">
 					<img src="img/nosotro.jpg" alt="Exhibición de calzado en una tienda" />
-					<figcaption>Selección pensada para destacar, todos los días.</figcaption>
 				</figure>
 			</section>
 
@@ -70,5 +72,6 @@
 			</footer>
 		</main>
 		<button class="whatsapp-float" type="button" title="WhatsApp: botón de muestra" aria-label="WhatsApp, botón de muestra"><img src="https://cdn.simpleicons.org/whatsapp/ffffff" alt="" /></button>
+		<script src="site-nav.js"></script>
 	</body>
 </html>
