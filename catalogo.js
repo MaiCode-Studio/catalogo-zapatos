@@ -2,7 +2,6 @@ const catalogo = [
   {
     id: 'bota-alta',
     nombre: 'Bota Alta',
-    nuevo: true,
     precio: 60.0,
     precioDescuento: 54.0,
     horma: 'Normal',
@@ -26,7 +25,6 @@ const catalogo = [
   {
     id: 'botin-dama',
     nombre: 'Botín Dama',
-    nuevo: true,
     precio: 48.0,
     precioDescuento: 43.0,
     horma: 'Normal',
@@ -48,7 +46,6 @@ const catalogo = [
   {
     id: 'botin-pedreria',
     nombre: 'Botín Pedrería',
-    nuevo: true,
     precio: 55.0,
     precioDescuento: 49.0,
     horma: 'Normal',
@@ -68,7 +65,6 @@ const catalogo = [
   {
     id: 'bota-paris',
     nombre: 'Bota Paris',
-    nuevo: true,
     precio: 55.0,
     precioDescuento: 50.0,
     horma: 'Normal',
@@ -87,7 +83,6 @@ const catalogo = [
   {
     id: 'botin-karen',
     nombre: 'Botín Karen',
-    nuevo: true,
     precio: 57.0,
     precioDescuento: 51.0,
     horma: 'Normal',
@@ -107,7 +102,6 @@ const catalogo = [
   {
     id: 'modelo-rihana',
     nombre: 'Modelo Rihana',
-    nuevo: true,
     precio: 38.0,
     precioDescuento: 33.0,
     horma: 'Normal',
@@ -585,6 +579,7 @@ const catalogo = [
   { 
     id: 'tacon-mule',
     nombre: 'Tacón Mule',
+    nuevo: true,
     precio: 37.0,
     precioDescuento: 32.0,
     horma: 'Normal',
@@ -601,6 +596,7 @@ const catalogo = [
   { 
     id: 'tacon-sueco',
     nombre: 'Tacón Sueco',
+    nuevo: true,
     precio: 37.0,
     precioDescuento: 32.0,
     horma: 'Normal',
@@ -617,6 +613,7 @@ const catalogo = [
   { 
     id: 'baleta-balerinas',
     nombre: 'Baleta Balerinas',
+    nuevo: true,
     precio: 37.0,
     precioDescuento: 32.0,
     horma: 'Normal',
@@ -632,6 +629,7 @@ const catalogo = [
   { 
     id: 'baleta-escotev',
     nombre: 'Baleta Escote V',
+    nuevo: true,
     precio: 34.0,
     precioDescuento: 29.0,
     horma: 'Normal',
