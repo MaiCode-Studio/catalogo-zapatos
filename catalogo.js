@@ -581,6 +581,69 @@ const catalogo = [
     ],
     imagenes: ['img/maryjean-negro.jpg', 'img/maryjean-blanco.jpg', 'img/maryjean-marron.jpg'],
     detalle: 'Flat cerrado de horma redonda y corte coquette. Confeccionado en acabado mate con detalle de lazo brillante en el empeine.Plano, súper cómodo para uso diario.'
+  },
+  { 
+    id: 'tacon-mule',
+    nombre: 'Tacón Mule',
+    precio: 37.0,
+    precioDescuento: 32.0,
+    horma: 'Normal',
+    tallas: ['35', '36', '37', '38', '39', '40'],
+    colores: [
+      { nombre: 'Negro', hex: '#070808de', imagen: 'img/mule-negro.jpg' },
+      { nombre: 'Beige', hex: '#e1b05bdd', imagen: 'img/mule-beige.jpg' },
+      { nombre: 'Chocolate', hex: '#452204f5', imagen: 'img/mule-chocolate.jpg' },
+      { nombre: 'Vino', hex: '#590303ce', imagen: 'img/mule-vino.jpg' }
+    ],
+    imagenes: ['img/tacon-mule.jpg', 'img/mule-negro.jpg', 'img/mule-beige.jpg', 'img/mule-chocolate.jpg', 'img/mule-vino.jpg'],
+    detalle: 'Sofisticación en su máxima expresión. El modelo Tacón Mule es un zapato cerrado de punta fina con correa trasera ajustable que asegura un firme y cómodo agarre al talón. Su acabado en charol y su diseño estilizado lo convierten en un básico imprescindible para elevar cualquier outfit formal o ejecutivo.'
+  },
+  { 
+    id: 'tacon-sueco',
+    nombre: 'Tacón Sueco',
+    precio: 37.0,
+    precioDescuento: 32.0,
+    horma: 'Normal',
+    tallas: ['35', '36', '37', '38', '39', '40'],
+    colores: [
+      { nombre: 'Negro', hex: '#070808de', imagen: 'img/sueco-negro.jpg' },
+      { nombre: 'Blanco', hex: '#fffeff', imagen: 'img/sueco-blanco.jpg' },
+      { nombre: 'Chocolate', hex: '#452204f5', imagen: 'img/sueco-chocolate.jpg' },
+      { nombre: 'Vino', hex: '#590303ce', imagen: 'img/sueco-vino.jpg' }
+    ],
+    imagenes: ['img/tacon-sueco.jpg', 'img/sueco-negro.jpg', 'img/sueco-blanco.jpg', 'img/sueco-chocolate.jpg', 'img/sueco-vino.jpg'],
+    detalle: 'Súmate a la tendencia más femenina con nuestro Tacón Sueco. Un diseño destalonado de punta cuadrada que resalta por su delicado detalle de lazo en la capellada. Su tacón bloque geométrico de altura media ofrece el soporte y la comodidad que necesitas para llevarlos durante todo el día sin perder el estilo.'
+  },
+  { 
+    id: 'baleta-balerinas',
+    nombre: 'Baleta Balerinas',
+    precio: 37.0,
+    precioDescuento: 32.0,
+    horma: 'Normal',
+    tallas: ['35', '36', '37', '38', '39', '40'],
+    colores: [
+      { nombre: 'Negro', hex: '#070808de', imagen: 'img/balerina-negro.jpg' },
+      { nombre: 'Blanco', hex: '#fffeff', imagen: 'img/balerina-blanco.jpg' },
+      { nombre: 'Vino', hex: '#590303ce', imagen: 'img/balerina-rojo.jpg' }
+    ],
+    imagenes: ['img/baleta-balerina.jpg', 'img/balerina-blanco.jpg', 'img/balerina-blanco.jpg', 'img/balerina-rojo.jpg'],
+    detalle: 'La combinación perfecta entre elegancia clásica y comodidad diaria. Nuestra Baleta Balerina destaca por su delicado diseño de punta cuadrada con acabado en charol de alto brillo y un refinado ribete a contraste con lazo frontal. Su plantilla acolchada garantiza confort en cada paso, siendo el calzado ideal tanto para el trabajo como para un look casual sofisticado.'
+  },
+  { 
+    id: 'baleta-escotev',
+    nombre: 'Baleta Escote V',
+    precio: 34.0,
+    precioDescuento: 29.0,
+    horma: 'Normal',
+    tallas: ['35', '36', '37', '38', '39', '40'],
+    colores: [
+      { nombre: 'Negro', hex: '#070808de', imagen: 'img/escote-negro.jpg' },
+      { nombre: 'Blanco', hex: '#fffeff', imagen: 'img/escote-blanco.jpg' },
+      { nombre: 'Chocolate', hex: '#452204f5', imagen: 'img/escote-chocolate.jpg' },
+      { nombre: 'Vino', hex: '#590303ce', imagen: 'img/escote-vino.jpg' }
+    ],
+    imagenes: ['img/escote-negro.jpg', 'img/escote-blanco.jpg', 'img/escote-chocolate.jpg', 'img/escote-vino.jpg'],
+    detalle: 'Estiliza tu silueta con el exclusivo Baleta Escote V. Este mule destalonado de punta fina cuenta con un elegante corte en "V" sobre el empeine que alarga visualmente la pierna. Diseñado con un tacón fino tipo kitten heel de altura media, te brinda la altura justa con total estabilidad y elegancia para cualquier ocasión especial.'
   }
 ];
 
