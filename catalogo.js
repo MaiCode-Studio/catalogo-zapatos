@@ -579,7 +579,6 @@ const catalogo = [
   { 
     id: 'tacon-mule',
     nombre: 'Tacón Mule',
-    nuevo: true,
     precio: 37.0,
     precioDescuento: 32.0,
     horma: 'Normal',
@@ -596,7 +595,6 @@ const catalogo = [
   { 
     id: 'tacon-sueco',
     nombre: 'Tacón Sueco',
-    nuevo: true,
     precio: 37.0,
     precioDescuento: 32.0,
     horma: 'Normal',
@@ -613,7 +611,6 @@ const catalogo = [
   { 
     id: 'baleta-balerinas',
     nombre: 'Baleta Balerinas',
-    nuevo: true,
     precio: 37.0,
     precioDescuento: 32.0,
     horma: 'Normal',
@@ -629,7 +626,6 @@ const catalogo = [
   { 
     id: 'baleta-escotev',
     nombre: 'Baleta Escote V',
-    nuevo: true,
     precio: 34.0,
     precioDescuento: 29.0,
     horma: 'Normal',
@@ -642,6 +638,111 @@ const catalogo = [
     ],
     imagenes: ['img/escote-negro.jpg', 'img/escote-blanco.jpg', 'img/escote-chocolate.jpg', 'img/escote-vino.jpg'],
     detalle: 'Estiliza tu silueta con el exclusivo Baleta Escote V. Este mule destalonado de punta fina cuenta con un elegante corte en "V" sobre el empeine que alarga visualmente la pierna. Diseñado con un tacón fino tipo kitten heel de altura media, te brinda la altura justa con total estabilidad y elegancia para cualquier ocasión especial.'
+  },
+  {
+    id: 'sandalia-conford',
+    nombre: 'Sandalia Conford',
+    nuevo: true,
+    precio: 41.0,
+    precioDescuento: 36.0,
+    horma: 'Normal',
+    tallas: ['35', '36', '37', '38', '39', '40'],
+    colores: [
+      { nombre: 'Negro', hex: '#070808de', imagen: 'img/conford-negro.jpg' },
+      { nombre: 'Gris', hex: '#b1a9b1f3', imagen: 'img/conford-gris.jpg' },
+      { nombre: 'Chocolate', hex: '#452204f5', imagen: 'img/conford-chocolate.jpg' },
+      { nombre: 'Beige', hex: '#e1b05bdd', imagen: 'img/conford-beige.jpg' }
+    ],
+    imagenes: ['img/sandalia-conford.jpg', 'img/conford-negro.jpg', 'img/conford-gris.jpg', 'img/conford-chocolate.jpg', 'img/conford-beige.jpg'],
+    detalle: 'La combinación perfecta de altura y comodidad para tu día a día. Diseñadas con una suela de plataforma estilo chunky 100% confort, capellada en material carnaza de alta calidad y un llamativo detalle de hebilla en acero inoxidable. Disponibles en múltiples combinaciones de colores que se adaptan con facilidad a tus outfits casuales, garantizando un soporte firme y un estilo moderno.'
+  },
+  {
+    id: 'baleta-lince',
+    nombre: 'Baleta Lince',
+    nuevo: true,
+    precio: 37.0,
+    precioDescuento: 32.0,
+    horma: 'Normal',
+    tallas: ['35', '36', '37', '38', '39', '40'],
+    colores: [
+      { nombre: 'Negro', hex: '#070808de', imagen: 'img/lince-negro.jpg' },
+      { nombre: 'Rojo', hex: '#d80606', imagen: 'img/lince-rojo.jpg' },
+      { nombre: 'Chocolate', hex: '#452204f5', imagen: 'img/lince-chocolate.jpg' },
+      { nombre: 'Beige', hex: '#e1b05bdd', imagen: 'img/lince-beige.jpg' }
+    ],
+    imagenes: ['img/baleta-lince.jpg', 'img/lince-negro.jpg', 'img/lince-rojo.jpg', 'img/lince-chocolate.jpg', 'img/lince-beige.jpg'],
+    detalle: 'Un calzado pensado para brindarte máxima suavidad y descanso en cada paso sin sacrificar la elegancia. Elaboradas en material lince, cuentan con una delicada tira frontal ajustable con hebilla metálica que asegura un ajuste perfecto. Su diseño versátil está disponible en distintos tonos ideales para complementar desde un look de oficina hasta una salida relajada de fin de semana.'
+  },
+  {
+    id: 'tacon-elegance',
+    nombre: 'Tacón Elegance',
+    nuevo: true,
+    precio: 43.0,
+    precioDescuento: 38.0,
+    horma: 'Normal',
+    tallas: ['35', '36', '37', '38', '39', '40'],
+    colores: [
+      { nombre: 'Negro', hex: '#070808de', imagen: 'img/elegance-negro.jpg' },
+      { nombre: 'Blanco', hex: '#ffffff', imagen: 'img/elegance-blanco.jpg' },
+      { nombre: 'Rosa', hex: '#e399d3', imagen: 'img/elegance-rosa.jpg' },
+      { nombre: 'Vino', hex: '#590303ce', imagen: 'img/elegance-vino.jpg' }
+    ],
+    imagenes: ['img/elegance-negro.jpg', 'img/elegance-blanco.jpg', 'img/elegance-rosa.jpg', 'img/elegance-vino.jpg'],
+    detalle: 'Eleva cualquier atuendo al instante con este deslumbrante diseño de tacón medio-alto. Destacan por su sofisticada tira de perlas en el empeine y un delicado detalle de lazo en la parte posterior o delantera que aporta un toque romántico y chic (coquette). Vienen en una gama de colores finos con acabados impecables, perfectos para ocasiones especiales, fiestas o eventos formales.'
+  },
+  {
+    id: 'tacon-monclear-basic',
+    nombre: 'Tacón Monclear Basic',
+    nuevo: true,
+    precio: 42.0,
+    precioDescuento: 37.0,
+    horma: 'Normal',
+    tallas: ['35', '36', '37', '38', '39', '40'],
+    colores: [
+      { nombre: 'Negro', hex: '#070808de', imagen: 'img/monclear-negro.jpg' },
+      { nombre: 'Vino', hex: '#590303ce', imagen: 'img/monclear-vino.jpg' },
+      { nombre: 'Chocolate', hex: '#452204f5', imagen: 'img/monclear-chocolate.jpg' },
+      { nombre: 'Beige', hex: '#e1b05bdd', imagen: 'img/monclear-beige.jpg' },
+      { nombre: 'Crema', hex: '#ebe8d5', imagen: 'img/monclear-crema.jpg' },
+      { nombre: 'Rojo', hex: '#d80606', imagen: 'img/monclear-rojo.jpg' },
+    ],
+    imagenes: ['img/tacon-monclear.jpg','img/monclear-negro.jpg', 'img/monclear-vino.jpg', 'img/monclear-chocolate.jpg', 'img/monclear-beige.jpg', 'img/monclear-crema.jpg', 'img/monclear-rojo.jpg'],
+    detalle: 'Sofisticación y modernidad en un solo calzado. Este modelo destalonado (slingback) está fabricado en material charol de brillo impecable, con un estético tacón copa que estiliza la figura con total estabilidad. Su diseño de punta fina y corte estilizado está disponible en una hermosa variedad de colores para que elijas tu favorito y aportes un toque de alta costura a tus looks formales o ejecutivos.'
+  },
+  {
+    id: 'tacon-perla',
+    nombre: 'Tacón Perla',
+    nuevo: true,
+    precio: 42.0,
+    precioDescuento: 37.0,
+    horma: 'Normal',
+    tallas: ['35', '36', '37', '38', '39', '40'],
+    colores: [
+      { nombre: 'Negro', hex: '#070808de', imagen: 'img/perla-negro.jpg' },
+      { nombre: 'Vino', hex: '#590303ce', imagen: 'img/perla-vino.jpg' },
+      { nombre: 'Marron', hex: '#452204f5', imagen: 'img/perla-marron.jpg' },
+      { nombre: 'Beige', hex: '#e1b05bdd', imagen: 'img/perla-beige.jpg' },
+      { nombre: 'Amarillo', hex: '#f6f03e', imagen: 'img/perla-amarillo.jpg' },
+      { nombre: 'Blanco', hex: '#ffffff', imagen: 'img/perla-blanco.jpg' },
+    ],
+    imagenes: ['img/tacon-perla.jpg', 'img/perla-negro.jpg', 'img/perla-vino.jpg', 'img/perla-marron.jpg', 'img/perla-beige.jpg', 'img/perla-amarillo.jpg', 'img/perla-blanco.jpg'],
+    detalle: 'Elegante zapato destalonado (slingback) con diseño de punta fina y un acabado en charol brillante de alta calidad. Cuenta con un tierno detalle de lazo en la parte superior y un cómodo tacón geométrico mediano que aporta estabilidad y sofisticación.'
+  },
+  {
+    id: 'tacon-charol-chic',
+    nombre: 'Tacón Charol Chic',
+    nuevo: true,
+    precio: 42.0,
+    precioDescuento: 37.0,
+    horma: 'Normal',
+    tallas: ['35', '36', '37', '38', '39', '40'],
+    colores: [
+      { nombre: 'Vino', hex: '#590303ce', imagen: 'img/chic-vino.jpg' },
+      { nombre: 'Rosa', hex: '#e399d3', imagen: 'img/chic-rosa.jpg' },
+      { nombre: 'Blanco', hex: '#ffffff', imagen: 'img/chic-blanco.jpg' },
+    ],
+    imagenes: ['img/chic-vino.jpg', 'img/chic-rosa.jpg', 'img/chic-blanco.jpg'],
+    detalle: 'Sofisticada sandalia de tacón alto con un diseño fresco y delicado. Su estructura presenta finas tiras cruzadas en el empeine, un encantador lazo decorativo y una tira ajustable al talón que garantiza un soporte firme y seguro.'
   }
 ];
 
